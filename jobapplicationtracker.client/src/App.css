@@ -1,0 +1,102 @@
+﻿#root{
+    margin:1rem;
+}
+
+.main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: 3em auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+    .table th, .table td {
+        padding: 12px;
+        text-align: left;
+        border: 1px solid #ddd;
+    }
+
+    .table th {
+        background-color: #002470;
+        color: white;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .table tr:hover {
+        background-color: #ddd;
+    }
+
+
+.form {
+    padding: 20px;    
+}
+
+    .form input {
+        padding: 12px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+    }
+
+    .form button {
+        background-color: #002470;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 1rem;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+        .form button:disabled {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        .form button:hover {
+            background-color: #002470;
+        }
+
+select {
+    width: 10rem; /*enough for status options*/
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;    
+}
+
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .form {
+        margin-top: 20px; 
+    }
+
+    .table th, .table td {
+        padding: 8px;
+    }
+
+    .form input, .form button, select {
+        font-size: 0.9rem;
+    }
+}

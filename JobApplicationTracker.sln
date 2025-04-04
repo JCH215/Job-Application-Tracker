@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35919.96 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "jobapplicationtracker.client", "jobapplicationtracker.client\jobapplicationtracker.client.esproj", "{B654BC1B-8E1E-A4AF-EA11-574EFD5E0E9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JobApplicationTracker.Server", "JobApplicationTracker.Server\JobApplicationTracker.Server.csproj", "{F7DFF0AB-71B9-46DE-A5CB-914353497F06}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B654BC1B-8E1E-A4AF-EA11-574EFD5E0E9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B654BC1B-8E1E-A4AF-EA11-574EFD5E0E9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B654BC1B-8E1E-A4AF-EA11-574EFD5E0E9C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B654BC1B-8E1E-A4AF-EA11-574EFD5E0E9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B654BC1B-8E1E-A4AF-EA11-574EFD5E0E9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B654BC1B-8E1E-A4AF-EA11-574EFD5E0E9C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F7DFF0AB-71B9-46DE-A5CB-914353497F06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7DFF0AB-71B9-46DE-A5CB-914353497F06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7DFF0AB-71B9-46DE-A5CB-914353497F06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7DFF0AB-71B9-46DE-A5CB-914353497F06}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51510241-0E73-4AD2-862F-1BF20FC68DB8}
+	EndGlobalSection
+EndGlobal
