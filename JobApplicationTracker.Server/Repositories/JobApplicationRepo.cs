@@ -26,6 +26,18 @@ namespace JobApplicationTracker.Server.Repositories
             return await DBContext.JobApplications.ToListAsync();
         }
 
+        public async Task<PagedResult<JobApplication>> GetPagedApplicationsAsync(int pageSize, int pageNo)
+        {
+            var totalCount = await DBContext.JobApplications.CountAsync();
+            var applications = await DBContext.JobApplications.Skip((pageNo - 1) * pageSize).Take(pageSize).ToListAsync();
+
+            return new PagedResult<JobApplication>()
+            {
+                TotalCount = totalCount,
+                Applications = applications
+            };
+        }
+
         public async Task<bool> UpdateJobApplicationAsync(JobApplication jobApplication)
         {
             DBContext.Entry(jobApplication).State = EntityState.Modified;

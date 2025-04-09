@@ -1,6 +1,7 @@
 ﻿using JobApplicationTracker.Server.Models;
 using JobApplicationTracker.Server.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace JobApplicationTracker.Server.Controllers
 {
@@ -24,6 +25,24 @@ namespace JobApplicationTracker.Server.Controllers
             return Ok(applications);
         }
 
+        /// <summary>
+        /// List paged applications
+        /// </summary>
+        /// <param name="pageSize">the number of applicaitons per page</param>
+        /// <param name="pageNo">page number</param>
+        /// <returns>Applications of given page</returns>
+        [HttpGet("{pageSize}/{pageNo}",Name ="paged")]
+        public async Task<ActionResult<PagedResult<JobApplication>>> GetPagedApplicationsAsync(int pageSize = 5, int pageNo = 1)
+        {
+            var result = await ApplicationService.GetPagedApplicationsAsyn(pageSize,pageNo);
+            return Ok(result);
+        }
+
+        /// <summary>
+        /// Get a job application by Id
+        /// </summary>
+        /// <param name="id">Application Id</param>
+        /// <returns>Application details</returns>
         [HttpGet("{id}")]
         public async Task<ActionResult<JobApplication>> GetById(int id)
         {
@@ -52,7 +71,7 @@ namespace JobApplicationTracker.Server.Controllers
             return CreatedAtAction(nameof(GetById), new { createdApplication.Id }, createdApplication);
         }
         /// <summary>
-        /// Update an application (e.g. change status to Intervide/Offer/Rejected.
+        /// Update an application (e.g. change status to Intervide/Offer/Rejected.)
         /// </summary>
         /// <param name="id">Application ID</param>
         /// <param name="application">Application details</param>

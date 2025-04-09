@@ -8,5 +8,6 @@ namespace JobApplicationTracker.Server.Services
         Task<JobApplication> GetJobApplicationByIdAsyn(int Id);
         Task<bool> UpdateJobApplicationAsync(JobApplication jobApplication);
         Task<JobApplication> AddJobApplicationAsync(JobApplication jobApplication);
+        Task<PagedResult<JobApplication>> GetPagedApplicationsAsyn(int pageSize, int pageNo);
     }
 }

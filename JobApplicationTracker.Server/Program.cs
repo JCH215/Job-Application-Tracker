@@ -2,6 +2,7 @@ using JobApplicationTracker.Server.DB;
 using JobApplicationTracker.Server.Repositories;
 using JobApplicationTracker.Server.Services;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,8 +15,17 @@ builder.Services.AddScoped<IApplicationService, ApplicationService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c=>
-c.SwaggerDoc("v1",new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Job Application Tracker API", Version = "v1"}));
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Job Application Tracker API", Version = "v1" });
+    
+    var xmlFilename = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFilename);
+
+    options.IncludeXmlComments(xmlPath);}
+);
+
+
 
 builder.Services.AddCors(options =>
 {

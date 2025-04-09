@@ -22,6 +22,11 @@ namespace JobApplicationTracker.Server.Services
             return await JobApplicationRepo.GetJobApplicationsAsync();
         }
 
+        public async Task<PagedResult<JobApplication>> GetPagedApplicationsAsyn(int pageSize, int pageNo)
+        {
+            return await JobApplicationRepo.GetPagedApplicationsAsync(pageSize, pageNo);
+        }
+
         public async Task<bool> UpdateJobApplicationAsync(JobApplication jobApplication)
         {
             return await JobApplicationRepo.UpdateJobApplicationAsync(jobApplication);

@@ -8,5 +8,6 @@ namespace JobApplicationTracker.Server.Repositories
         Task<IEnumerable<JobApplication>> GetJobApplicationsAsync();
         Task<bool> UpdateJobApplicationAsync(JobApplication jobApplication);
         Task<JobApplication> AddJobApplicationAsync(JobApplication jobApplication);
+        Task<PagedResult<JobApplication>> GetPagedApplicationsAsync(int pageSize, int pageNo);
     }
 }
